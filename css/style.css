@@ -1,0 +1,421 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+/** body **/
+ body {
+	width: 100%;
+	height: 100%;
+/* 	overflow: hidden;
+	background-color: #00bfff; */
+}
+
+.text {
+	background-image: url('1.jpg');
+	height: max-content;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.title-page {
+	background: rgba(0,0,0,0.5);
+	text-align: center;
+	color: white;
+	padding: 50px;
+	font-variant: small-caps;
+	font-size: 80px;
+	letter-spacing: 3px;
+}
+#sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.menu {
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	background: #4682b4;
+	text-align: center;
+	display: flex;
+ 	justify-content: space-around;
+	align-items: center; 
+	flex-wrap: wrap; 
+}
+/** logo **/
+.logo a img{
+	display: inline-flex;
+	height: 70px;
+	width: 70px;
+	background-color: white;
+	border-radius: 50%;
+}
+.logo a img: hover{
+	transform: scale(1.1);
+}
+.menu-ul {
+	display: inline;	
+}
+.menu-ul li {
+	font-size: 17px;
+	display: inline-block;
+	padding: 25px;
+}
+.a-menu, .a-links{
+	color: white;
+}
+.menu-ul li:hover{
+	background: #87ceeb;
+	border-radius: 10px;
+	transform: scale(1.1);
+}
+.search {
+	border: 1px solid white;
+	border-radius: 50px;
+	background: white;
+	width: max-content;
+	display: inline-block;
+	margin: 10px;
+	height: 30px;
+}
+.search:hover{
+	box-shadow: 0 0 10px 2px #5b8c5a;
+	border: 1px solid #5b8c5a;
+}
+.search-input {
+	width: 250px;
+	border: none;
+	font-size: 16px;
+	outline: none;
+	background: transparent;
+	margin: 6px 0 0 8px;
+}
+i {
+	font-size: 20px;
+	margin: 0 10px 0 0;
+}
+button {
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+/** main **/
+/* slider */
+.home {
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+}
+.home .slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+	display: none;
+	padding: 0 15px;
+	animation: slide 2s ease;
+}
+.home .slide.active{
+	display: flex;
+}
+@keyframes slide {
+	0%{
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.container {
+	max-width: 1170px;
+	margin: auto;
+}
+.home .container {
+	flex-grow: 1;
+	margin: auto 50px;
+}
+.home .caption {
+	width: 50%;
+}
+.home .caption h1 {
+	font-size: 42px;
+	color: black;
+	margin: 0;
+}
+.home .slide.active .caption h1 {
+	opacity: 0;
+	animation: captionText .5s ease forwards;
+	animation-delay: 1s;
+}
+.home .caption p {
+	font-size: 20px;
+	color: white;
+	margin: 10px 0 30px;
+}
+.home .slide.active .caption p {
+	opacity: 0;
+	animation: captionText .5s ease forwards;
+	animation-delay: 1.2s;
+}
+.home .caption a {
+	display: inline-block;
+	padding: 10px 30px;
+	background-color: #000000;
+	color: #ffffff;
+}
+.home .slide.active .caption a {
+	opacity: 0;
+	animation: captionText .5s ease forwards;
+	animation-delay: 1.4s;
+}
+@keyframes captionText {
+	0%{
+		opacity: 0; transform: translateX(-100px);
+	}
+	100%{
+		opacity: 1; transform: translateX(0px);
+	}
+}
+.home .controls .prev,
+.home .controls .next{
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	height: 40px;
+	width: 40px;
+	margin-top: -20px;
+	color: #ffffff;
+	background-color: #ff5722;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+.home .controls .prev:hover,
+.home .controls .next:hover{
+	background-color: blue;
+}
+.home .controls .prev {
+	left: 0;
+}
+.home .controls .next {
+	right: 0;
+}
+
+/** style produits **/
+.container1, .products-container {
+	margin: 50px 50px 50px 5%;
+	width: 90%;
+	text-align: center;
+}
+.categories, .items {
+	width: max-content;
+	margin: 25px;
+	border: 1px solid #184d47;
+	border-radius: 0 0 50px 50px;
+	display: inline-block;
+}
+.categories:hover, .items:hover {
+	box-shadow: 0 0 10px 3px #184d47;
+}
+.item-image {
+	height: 200px;
+	width: 300px;
+	border-radius: 0 0 50px 50px;
+	padding: 10px;
+}
+.image-title {
+	text-align: center;
+	padding: 10px;
+	font-weight: bold;
+}
+
+/** style products-container **/
+.title {
+	padding: 50px;
+	font-size: 50px;
+	font-weight: bold;
+	letter-spacing: 10px;
+	color: white;
+	background: rgba(0,0,0,0.5);
+}
+.product {
+	padding: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	display: inline-block;
+	margin: 20px;
+	max-width: 20%;
+	background: linear-gradient(120deg,#16817a 20%,#cee397 50%,#16817a 80%);
+}
+.coupon-btn {
+	border: 1px solid white;
+	color: white;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 20px;
+}
+.coupon-btn:hover {
+	box-shadow: 0 0 10px 5px white inset;
+}
+
+/** style cap jeans t-shirt**/
+.images {
+	display: inline-block;
+}
+.item-image-size {
+	height: 200px;
+	width: 300px;
+	padding: 5px;
+}
+.description {
+	margin: 20px;
+	min-height: 80px;
+}
+.item-select {
+	margin: 10px 0 0 0;
+}
+.buynow-btn {
+	border: 1px solid #184d47;
+	background: #184d47;
+	padding: 5px 15px;
+	border-radius: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+	color: white;
+}
+.buynow-btn:hover {
+	border: 1px solid #5b8c5a;
+	box-shadow: 0 0 10px 5px #5b8c5a insert;
+}
+ 
+/** style footer **/
+.text1 {
+	background-color: black;
+	height: max-content;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.footer {
+	background: rgba(0,0,0,0.5);
+	text-align: center;
+	padding: 20px;
+}
+.quick-links {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	display: inline-block;
+	min-width: 20%;
+}
+.titre {
+	color: blue;
+	border-bottom: 1px solid grey;
+}
+.quick-links ul {
+	padding: 0;
+}
+.quick-links li {
+	list-style: none;
+	padding: 10px;
+	font-weight: 300;
+}
+.a-links:hover {
+	color: #fd5e53;
+}
+.copyrights {
+	font-size: 16px;
+	text-align: center;
+	margin: 15px;
+}
+.checkbtn {
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check {
+	display: none;
+}
+
+@media (max-width: 952px) {
+	.logo {
+		font-size: 30px;
+		padding-left: 50px;
+	}
+	.navigation ul li a {
+		font-size: 16px;
+	}
+}
+@media (max-width: 858px) {
+	.checkbtn {
+		display: block;
+	}
+    ul {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #2c3e50;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+	}
+	.navigation ul li {
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	.navigation ul li a {
+		font-size: 20px;
+	}
+	#check:checked ~ ul {
+		left: 0;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
